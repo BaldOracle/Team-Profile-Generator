@@ -9,30 +9,32 @@ const Intern = require('./lib/Intern');
 //    createManager()
 
 // }
-
+const team = []
 function createTeam() {
    inquirer
       .prompt([
          {
-            type: 'checkbox',
+            type: 'list',
             name: 'teamType',
             message: 'Who do you want to add first?',
             choices: ['Engineer', 'Intern', 'Exit']
          },
       ])
       .then((response) => {
+         console.log(response)
          // Use user feedback for... whatever!!
-         if (response.choices === 'Engineer') {
-            console.log = "yaa!!"
+         if (response.teamType === 'Engineer') {
+            console.log("yaa!!")
             createEngineer();
 
-         } else if (response.choices === 'Intern') {
+         } else if (response.teamType === 'Intern') {
             createIntern();
-         } else if (response.choices==='Exit'){
+         } else if (response.teamType === 'Exit'){
             console.log(team)
          }
       })
 }
+
 
 function createManager() {
    inquirer
@@ -62,8 +64,8 @@ function createManager() {
       .then((response) => {
          // Use user feedback for... whatever!!
          const newManager = new Manager(response.managerName, response.employeeId, response.email, response.officeNumber)
-         console.log = newManager
-         team.push = newManager
+         console.log(newManager)
+         team.push(newManager)
          createTeam()
       })
       .catch((error) => {
@@ -73,8 +75,8 @@ function createManager() {
             // Something else went wrong
          }
       });
-
 }
+
 
 function createEngineer() {
    inquirer
@@ -105,8 +107,8 @@ function createEngineer() {
          // Use user feedback for... whatever!!
       
          const newEngineer = new Engineer(response.engineerName, response.employeeId, response.email, response.gitHubUserName)
-         console.log = newEngineer
-         team.push = newEngineer
+         console.log(newEngineer)
+         team.push(newEngineer)
          createTeam();
 
       })
@@ -117,8 +119,6 @@ function createEngineer() {
             // Something else went wrong
          }
       });
-
-
 }
 
 function createIntern() {
@@ -149,8 +149,8 @@ function createIntern() {
       .then((response) => {
          // Use user feedback for... whatever!!
          const newIntern = new Intern(response.interName, response.employeeId, response.email, response.school)
-         console.log = newIntern
-         team.push = newIntern
+         console.log(newIntern)
+         team.push(newIntern)
          createTeam();
       })
       .catch((error) => {
@@ -160,8 +160,8 @@ function createIntern() {
             // Something else went wrong
          }
       });
-
 }
-const team = []
+
+
 // //menu()
 createManager()
