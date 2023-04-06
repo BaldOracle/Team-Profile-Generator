@@ -5,10 +5,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-// function menu() {
-//    createManager()
 
-// }
 const team = []
 function createTeam() {
    inquirer
@@ -17,7 +14,7 @@ function createTeam() {
             type: 'list',
             name: 'teamType',
             message: 'Who do you want to add first?',
-            choices: ['Engineer', 'Intern', 'Create-Team']
+            choices: ['Engineer', 'Intern', 'Exit']
          },
       ])
       .then((response) => {
@@ -29,7 +26,7 @@ function createTeam() {
 
          } else if (response.teamType === 'Intern') {
             createIntern();
-         } else if (response.teamType === 'Create-Team') {
+         } else if (response.teamType === 'Exit') {
             console.log(team)
             buildTeam();
          }
