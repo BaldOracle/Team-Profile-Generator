@@ -68,14 +68,14 @@ function putItTogether() {
            <li class="list-group-item">Name: ${teamMember.getName()}</li>
            <li class="list-group-item">ID: ${teamMember.getId()}</li>
            <li class="list-group-item" >
-           <a href=${teamMember.getEmail()}>Email: ${teamMember.getEmail()}</a>
+           <a href=mailto:${teamMember.getEmail()}>Email: ${teamMember.getEmail()}</a>
            </li>
       `
       if (role === 'Manager') {
          return `
          
             ${htmlCard}
-           <li class="list-group-item"> <a href=${teamMember.getOfficeNumber()}>Phone Number: ${teamMember.getOfficeNumber()} </a> </li>
+           <li class="list-group-item"> <a href=tel:${teamMember.getOfficeNumber()}>Phone Number: ${teamMember.getOfficeNumber()} </a> </li>
  
          </ul>
        </div>`
@@ -93,7 +93,7 @@ function putItTogether() {
       } else if (role === 'Intern') {
          return `
          ${htmlCard}
-         <li class="list-group-item">A=School: ${teamMember.getSchool()}</li>
+         <li class="list-group-item">School: ${teamMember.getSchool()}</li>
        </ul>
      </div>
        `
