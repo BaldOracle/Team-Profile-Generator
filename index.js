@@ -54,10 +54,11 @@ function putItTogether() {
 
 
    ${team.map(teamMember => {
-      let role = teamMember.getRole()
-      let email = teamMember.getEmail()
-      let phone = teamMember.getOfficeNumber()
-      let git = teamMember.getGithub()
+      let role = teamMember.getRole();
+      //let email = teamMember.getEmail();
+      //let phone = teamMember.getOfficeNumber();
+      //let git = teamMember.getGithub();
+
       let htmlCard = `
       <div class="card" style="width: 18rem;">
          <div class="card-header">
@@ -66,20 +67,24 @@ function putItTogether() {
          <ul class="list-group list-group-flush">
            <li class="list-group-item">Name: ${teamMember.getName()}</li>
            <li class="list-group-item">ID: ${teamMember.getId()}</li>
-           <li class="list-group-item" href=${email}>Email: ${teamMember.getEmail()}</li>
+           <li class="list-group-item" >
+           <a href=${teamMember.getEmail()}>Email: ${teamMember.getEmail()}</a>
+           </li>
       `
       if (role === 'Manager') {
          return `
          
             ${htmlCard}
-           <li class="list-group-item" href=${phone}>Phone Number: ${phone}</li>
+           <li class="list-group-item"> <a href=${teamMember.getOfficeNumber()}>Phone Number: ${teamMember.getOfficeNumber()} </a> </li>
  
          </ul>
        </div>`
       } else if (role === 'Engineer') {
          return `
          ${htmlCard}
-           <li class="list-group-item" href =https://github.com/${git}>Github: ${teamMember.getGithub()}</li>
+           <li class="list-group-item">
+           <a href =https://github.com/${teamMember.getGithub()}> Github: ${teamMember.getGithub()}</a>
+           </li>
  
          </ul>
        </div>
