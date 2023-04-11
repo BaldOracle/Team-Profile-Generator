@@ -45,3 +45,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 <video src=./Assets\Team-Profile-creator.webm type='video'></video>
+![Alt text](assets/Team-Profile-creator.webm)
