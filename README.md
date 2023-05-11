@@ -2,22 +2,21 @@
 
 ## Description
 
-Use Node to create a team that consist of manager, interns, and engineers. When done the entire team will show on html file. 
+The Team Profile Generator is a command-line application that enables users to generate a team profile website based on the input provided. The application uses Node.js and the Inquirer package to prompt the user with questions about the team members and their information. Once the user has entered all the necessary data, the application creates an HTML file that displays the team members' information in an organized and professional manner. This tool is perfect for businesses and organizations that want to quickly and easily generate a professional-looking team profile website.
 
 [License](#License)
 
 ## Installation
 
-npm install
-node index.js
+To use this application, you will need to have Node.js and the Inquirer package installed on your computer. You can install the necessary dependencies by running the command "npm install" in your terminal.
 
 ## Usage
 
-Tool to create an engineering team 
+This application is ideal for businesses and organizations that need to create a professional-looking team profile website quickly and easily. To use the application, simply run the command "node index.js" in your terminal and answer the prompts. Once you have entered all the necessary information, the application will generate an HTML file that displays the team members' information.
 
 ## Credits
 
-N/A
+This application was developed by BaldOracle as a project for a full-stack coding bootcamp.
 
 
 ## License
